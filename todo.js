@@ -1,5 +1,7 @@
 //To Do List App
-//Will be improved iteratively as I gain advanced JS skills.
+//Author: Ashley Kung
+//Created: 7/2/19
+// Will be improved iteratively as I gain advanced JS skills.
 
 let todoList = {
   todos: [],
