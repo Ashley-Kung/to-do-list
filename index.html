@@ -4,18 +4,50 @@
 
   <head>
     <title>To Do List</title>
+	<link rel="stylesheet" href="style.css" type="text/css">
   </head>
 
   <body>
     <h1>My To Do List</h1>
 
-    <div>
-      <button id="display-btn">Display To Dos</button>
-      <button id="toggle-all-btn">Toggle All</button>
+    <div id="button-container">
+	  <div class="ind-button-container">
+        <button id="display-btn">Display To Dos</button>
+	  </div>
+	  
+	  <div class="ind-button-container">
+        <button id="toggle-all-btn">Toggle All</button>
+	  </div>
+	  
+	  <div class="ind-button-container">
+	  	<label for="toggle-todo-position">Item number to toggle:</label>
+	    <input id="toggle-todo-position" type="number">
+	    <button id="toggle-todo-btn">Toggle To Do</button>
+	  </div>
+	  
+	  <div class="ind-button-container">
+	    <input id="add-todo-input" type="text">	  
+	    <button id="add-todo-btn">Add To Do</button>
+      </div>
+	  
+	  <div class="ind-button-container">
+	  	<label for="change-todo-position">Item number to change:</label>
+	    <input id="change-todo-position" type="number">
+		<label for="change-todo-text">New Text:</label>
+	    <input id="change-todo-text" type="text">
+	    <button id="change-todo-btn">Change To Do</button>
+	  </div>
+	  
+	  <div class="ind-button-container">
+	  	<label for="delete-todo-position">Item number to delete:</label>
+	    <input id="delete-todo-position" type="number">
+	    <button id="delete-todo-btn">Delete To Do</button>
+	  </div>
+
     </div>
-
+	
     <script type="text/javascript" src="todo.js"></script>
-
+  
   </body>
 
 </html>

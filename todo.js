@@ -1,11 +1,11 @@
-//To Do List App
+	//To Do List App
 //Author: Ashley Kung
 //Created: 7/2/19
 // Will be improved iteratively as I gain advanced JS skills.
 
 let todoList = {
   todos: [],
-  
+
   displayTodos: function() {
     if (this.todos.length === 0) {
       console.log("To do list is empty.");
@@ -20,22 +20,23 @@ let todoList = {
       };
     };
   },
-  
+
   addTodo: function(item) {
     this.todos.push({ item: item, completed: false });
     this.displayTodos();
   },
-  
+
   changeTodo: function(itemIndex, newValue) {
     this.todos[itemIndex].item = newValue;
     this.displayTodos();
   },
-  
+
   toggleCompleted: function(itemIndex) {
     let todo = this.todos[itemIndex];
     todo.completed = !todo.completed;
+	this.displayTodos();
   },
-  
+
   toggleAll: function() {
     var totalToDos = this.todos.length;
     var completedToDos = 0;
@@ -55,25 +56,51 @@ let todoList = {
     }
     this.displayTodos();
   },
-  
+
   deleteTodo: function(itemIndex) {
     this.todos.splice(itemIndex, 1);
     this.displayTodos();
   }
 };
 
-//Get access to Display To Dos button
+//Set up Display To Dos button
 let displayTodosButton = document.getElementById('display-btn');
-
-//Run displayTodos method when Display To Dos button is clicked
 displayTodosButton.addEventListener('click', function() {
-  todoList.displayTodos();
+	todoList.displayTodos();
 });
 
-//Get access to Toggle All button
+//Set up Toggle All button
 let toggleAllButton = document.getElementById('toggle-all-btn');
-
-//Run toggleAll method when Toggle All button is clicked
 toggleAllButton.addEventListener('click', function() {
-  todoList.toggleAll();
+	todoList.toggleAll();
 });
+
+//Set up Toggle Item button
+let toggleTodoButton = document.getElementById('toggle-todo-btn');
+let toggleTodoPositionInput = document.getElementById('toggle-todo-position');
+toggleTodoButton.addEventListener('click', function() {
+	todoList.toggleCompleted(toggleTodoPositionInput.valueAsNumber-1);
+});
+
+//Set up Add To Do button
+let addTodoButton = document.getElementById('add-todo-btn');
+let addTodoTextInput = document.getElementById('add-todo-input');
+addTodoButton.addEventListener('click', function() {
+	todoList.addTodo(addTodoTextInput.value);
+});
+
+//Set up Change To Do button
+let changeTodoButton = document.getElementById('change-todo-btn');
+let changeTodoPositionInput = document.getElementById('change-todo-position');
+let changeTodoTextInput = document.getElementById('change-todo-text');
+changeTodoButton.addEventListener('click', function() {
+	todoList.changeTodo(changeTodoPositionInput.valueAsNumber-1,changeTodoTextInput.value);
+});
+
+//Set up Delete Item button
+let deleteTodoButton = document.getElementById('delete-todo-btn');
+let deleteTodoPositionInput = document.getElementById('delete-todo-position');
+deleteTodoButton.addEventListener('click', function() {
+	todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber-1);
+});
+

@@ -1,0 +1,20 @@
+#button-container {
+	display: flex;
+	flex-direction: column;
+	width: 20%;
+	min-width: 100px;
+}
+button {
+	margin: 10px;
+	min-width: 100px;
+}
+
+.ind-button-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+#add-todo-input {
+	height: 15px;
+}
