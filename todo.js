@@ -50,7 +50,7 @@ let todoList = {
     }
     } else {
       for (let k = 0; k < this.todos.length; k++) {
-        this.todos[j].completed = true;
+        this.todos[k].completed = true;
       }
     }
     this.displayTodos();
@@ -61,3 +61,19 @@ let todoList = {
     this.displayTodos();
   }
 };
+
+//Get access to Display To Dos button
+let displayTodosButton = document.getElementById('display-btn');
+
+//Run displayTodos method when Display To Dos button is clicked
+displayTodosButton.addEventListener('click', function() {
+  todoList.displayTodos();
+});
+
+//Get access to Toggle All button
+let toggleAllButton = document.getElementById('toggle-all-btn');
+
+//Run toggleAll method when Toggle All button is clicked
+toggleAllButton.addEventListener('click', function() {
+  todoList.toggleAll();
+});
